@@ -1,0 +1,24 @@
+<button (click)="this.bit.updateBitCoinRates()">atualizar</button>
+<h2>Tabela de Moedas em Reais:</h2>
+<p>Atualiza a cada minuto:
+{{bit.getCount()}}s</p>
+<table border="1">
+<tr>
+  <th>Data/hora</th>
+  <th>USD</th>
+  <th>BTC</th>
+  <th>EUR</th>
+</tr>
+<tr *ngFor="let rate of this.bit.bitCoinRates;let i=index">
+  <td>{{rate.time.updated}}</td>
+  <td>
+    R$ {{rate.bpi.BRL.rate_float / rate.bpi.USD.rate_float}}
+  </td>
+  <td>
+     R$ {{rate.bpi.BRL.rate_float}}
+  </td>
+  <td>
+  R$ {{rate.bpi.BRL.rate_float / this.bit.bitCoinRates2[i].bpi.EUR.rate_float}}
+</td>
+</tr>
+</table>

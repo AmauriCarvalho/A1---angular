@@ -1,0 +1,12 @@
+<p>
+Seu saldo em Bitcoin: {{bit.getSaldo()}}<br>
+Seu Saldo em Reais: {{bit.getSaldoBRL()}}<br>
+Seu Saldo em Dollar: {{bit.getSaldoUSD()}}<br>
+Seu Saldo em Euro: {{bit.getSaldoEUR()}}
+</p>
+<p>
+Adicionar saldo em Reais:<br>
+<input #input1 type="number" min="0.1"><br>
+<button (click)="this.bit.adicionarSaldo(input1.value)">Adicionar</button>
+<button (click)="this.bit.removerSaldo(input1.value)">Remover</button>
+</p>
